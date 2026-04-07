@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import { mainCats } from '../UI/Categories';
+import { mainCats } from '../subComp/Categories';
 
 const Footer = () => {
   return (

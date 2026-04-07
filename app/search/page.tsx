@@ -1,26 +1,27 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import Card from '@/components/UI/Card';
-import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
-import HeaderMenu from '@/components/UI/HeaderCategory';
-import Breadcrumb from '@/components/UI/Breadcrumb';
-import Sidebar from '@/components/UI/Sidebar';
-import { FilterProvider, useFilter } from '@/components/UI/FilterContext';
+import Card from '@/components/subComp/Card';
+import PageLayout from '@/components/subComp/PageLayout';
+import Breadcrumb from '@/components/subComp/Breadcrumb';
+import Sidebar from '@/components/subComp/Sidebar';
+import { FilterProvider, useFilter } from '@/components/subComp/FilterContext';
 
 function SearchResults({ query }: { query: string }) {
-  const { filteredProducts, allProducts } = useFilter()
+  const { filteredProducts, allProducts, setSearchQuery } = useFilter()
   const loading = allProducts.length === 0
+
+  useEffect(() => {
+    setSearchQuery(query)
+  }, [query, setSearchQuery])
 
   return (
     <div>
       <h2 className="text-2xl font-bold py-6">
         Search Results for: <span className="text-blue-600">{query.toUpperCase()}</span>
       </h2>
-
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {loading ? (
           <p className="col-span-4">Loading...</p>
         ) : filteredProducts.length > 0 ? (
@@ -41,10 +42,7 @@ export default function SearchResult() {
 
   return (
     <FilterProvider initialSearchQuery={query}>
-      <div>
-        <Header />
-        <HeaderMenu />
-
+      <PageLayout>
         <main className="p-4 mb-6">
           <Breadcrumb />
           <div className='w-full flex gap-2 md:gap-6'>
@@ -52,9 +50,7 @@ export default function SearchResult() {
             <SearchResults query={query} />
           </div>
         </main>
-
-        <Footer />
-      </div>
+      </PageLayout>
     </FilterProvider>
   );
 }

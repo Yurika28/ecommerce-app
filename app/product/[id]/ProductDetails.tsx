@@ -3,10 +3,11 @@
 import React, { useState } from 'react'
 import { StarIcon, HeartIcon as HeartSolid } from '@heroicons/react/24/solid'
 import { HeartIcon, ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
-import Button from '@/components/UI/Button'
+import Image from 'next/image'
+import Button from '@/components/subComp/Button'
 import { Product } from '@/components/Section/ProductsGrid'
-import { useCart } from '@/components/UI/CartContext'
-import { useWishlist } from '@/components/UI/WishlistContext'
+import { useCart } from '@/components/subComp/CartContext'
+import { useWishlist } from '@/components/subComp/WishlistContext'
 
 export default function ProductDetails({ product }: { product: Product }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -22,10 +23,12 @@ export default function ProductDetails({ product }: { product: Product }) {
           <div className="flex flex-col min-h-0 overflow-hidden">
             <div className="grid grid-cols-2 gap-4">
               {product.images.map((image, idx) => (
-                <img
+                <Image
                   key={idx}
                   src={image}
                   alt={product.title}
+                  width={400}
+                  height={400}
                   className="w-full h-auto object-contain bg-[#dedede] rounded-md"
                 />
               ))}

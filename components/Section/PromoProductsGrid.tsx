@@ -1,29 +1,9 @@
 import React from 'react'
-import Card from '../UI/Card'
+import Card from '../subComp/Card'
 import Link from 'next/link'
-import { productUrls, ProductUrlKey } from '../UI/GridCat'
+import { productUrls, ProductUrlKey } from '../subComp/GridCat'
+import { Product } from '@/components/types/product'
 
-export type Product = { 
-    id: number; 
-    title: string; 
-    description: string;  
-    stock: number; 
-    brand: string; 
-    category: string; 
-    thumbnail: string; 
-    price: number; 
-    discountPercentage: number; 
-    rating: number; 
-    images: string[]; 
-    reviews: string[]; 
-    tags: string[]; 
-    sku: string; 
-    weight: number; 
-    dimensions: { depth: number; width: number; height: number; }; 
-    warrantyInformation: string; 
-    shippingInformation: string; 
-    meta: { returnPolicy: string; qrCode: string; }; 
-};
 
 type GridProductsProps = {
   products: Product[] | ProductUrlKey

@@ -1,22 +1,24 @@
+import Image from 'next/image'
+import Countdown from '../subComp/Countdown'
 
-import Countdown from '../UI/Countdown'
 
-
-const FUTURE_DATE = new Date('2025-07-30T23:59:59').getTime();
+const FUTURE_DATE = new Date('2026-06-30T23:59:59').getTime();
 
 const HomeGrid = () => {
 
   return (
     <>
-      <h1 className='text-lg md:text-3xl font-bold px-4 mt-2 text-neutral-600'>DEAL OF THE DAY</h1>
-      <p className='text-sm md:text-base px-4 text-neutral-500 mb-2'>Don't miss out — grab the best deals before they're gone!</p>
+      <h1 className='text-lg md:text-3xl font-bold px-4 mt-2 text-neutral-900 dark:text-neutral-100'>DEAL OF THE DAY</h1>
+      <p className='text-sm md:text-base px-4 text-neutral-500 mb-2'>Don&apos;t miss out — grab the best deals before they&apos;re gone!</p>
 
       <div className="grid grid-cols-4 grid-rows-6 gap-1 md:gap-4 p-4 h-[350px] md:h-[700px]">
         
-        <div className="bg-neutral-200 p-4 rounded-2xl col-span-2 row-span-3 flex flex-col items-center justify-center text-center cursor-pointer">
-          <img
+        <div className="relative bg-neutral-200 dark:bg-neutral-700 p-4 rounded-2xl col-span-2 row-span-3 flex flex-col items-center justify-center text-center cursor-pointer">
+          <Image
             src="https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/thumbnail.webp"
             alt="Sunglasses"
+            width={300}
+            height={240}
             className="object-cover w-full h-[80%] z-10"
           />
           <p className="mt-4 font-bold text-sm md:text-lg">TODAY DEAL !</p>
@@ -24,38 +26,42 @@ const HomeGrid = () => {
         </div>
 
         
-        <div className="bg-neutral-200 p-4 rounded-2xl col-start-3 col-end-4 row-start-1 row-end-4 cursor-pointer">
-          <img
+        <div className="relative bg-neutral-200 dark:bg-neutral-700 p-4 rounded-2xl col-start-3 col-end-4 row-start-1 row-end-4 cursor-pointer">
+          <Image
+            fill
             src="https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/3.webp"
             alt="iPhone"
-            className="w-full h-full object-contain"
+            className="object-contain p-4"
           />
         </div>
 
-        
-        <div className="bg-neutral-200 p-4 rounded-2xl col-start-4 col-end-5 row-span-3 cursor-pointer">
-          <img
+
+        <div className="relative bg-neutral-200 dark:bg-neutral-700 p-4 rounded-2xl col-start-4 col-end-5 row-span-3 cursor-pointer">
+          <Image
+            fill
             src="https://cdn.dummyjson.com/product-images/furniture/knoll-saarinen-executive-conference-chair/thumbnail.webp"
             alt="Chair"
-            className="w-full h-full object-contain md:object-cover rounded-xl"
+            className="object-contain md:object-cover rounded-xl p-4"
           />
         </div>
 
-      
-        <div className="bg-neutral-200 p-4 rounded-2xl col-start-1 col-end-2 row-start-4 row-end-7 cursor-pointer">
-          <img
+
+        <div className="relative bg-neutral-200 dark:bg-neutral-700 p-4 rounded-2xl col-start-1 col-end-2 row-start-4 row-end-7 cursor-pointer">
+          <Image
+            fill
             src="https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-&-red/thumbnail.webp"
             alt="Shoes"
-            className="w-full h-full object-contain"
+            className="object-contain p-4"
           />
         </div>
 
-        
-        <div className="bg-neutral-200 p-4 rounded-2xl col-start-2 col-end-3 row-start-4 row-end-7 cursor-pointer">
-          <img
+
+        <div className="relative bg-neutral-200 dark:bg-neutral-700 p-4 rounded-2xl col-start-2 col-end-3 row-start-4 row-end-7 cursor-pointer">
+          <Image
+            fill
             src="https://cdn.dummyjson.com/product-images/womens-bags/prada-women-bag/thumbnail.webp"
             alt="Women Bag"
-            className="w-full h-full object-contain md:object-cover rounded-xl"
+            className="object-contain md:object-cover rounded-xl p-4"
           />
         </div>
         <div className="bg-yellow-50 p-2 md:p-4 rounded-2xl col-start-3 col-end-5 row-start-4 row-end-7 flex flex-col cursor-pointer">
@@ -79,9 +85,11 @@ const HomeGrid = () => {
 
             
             <div className="flex justify-center items-center h-full">
-              <img
+              <Image
                 src="https://cdn.dummyjson.com/product-images/groceries/honey-jar/1.webp"
                 alt="Honey Jar"
+                width={200}
+                height={200}
                 className="object-contain max-h-20 md:max-h-52 w-auto"
               />
             </div>

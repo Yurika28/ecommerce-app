@@ -1,5 +1,6 @@
 import React from 'react';
-import ribbon from '@/components/UI/ribbon-removebg-preview.png';
+import Image from 'next/image';
+import ribbon from '@/components/subComp/ribbon-removebg-preview.png';
 
 
 const coupons = [
@@ -11,10 +12,11 @@ const coupons = [
 
 const CouponCard = ({ price }: { price: string }) => (
   <div className="bg-amber-50 border border-amber-100 rounded-lg w-full max-w-[18rem] aspect-[4/3] flex flex-col justify-end items-center relative overflow-hidden shadow-sm pb-2">
-    <img
-      src={ribbon.src}
+    <Image
+      src={ribbon}
       alt="Ribbon"
-      className="absolute inset-0 w-full h-full object-cover opacity-90"
+      fill
+      className="object-cover opacity-90"
     />
     <div className="relative z-10 text-center">
       <p className="text-md text-gray-600 font-semibold tracking-widest">COUPON</p>

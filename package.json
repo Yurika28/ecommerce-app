@@ -12,11 +12,14 @@
     "@clerk/nextjs": "^6.24.0",
     "@heroicons/react": "^2.2.0",
     "@sidekickicons/react": "^0.13.0",
+    "@stripe/stripe-js": "^9.0.0",
     "embla-carousel-react": "^8.6.0",
+    "geist": "^1.7.0",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "stripe": "^21.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

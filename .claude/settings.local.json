@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh pr:*)",
+      "Bash(npm install:*)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\USER\\Desktop\\GIT\\new-react-typescript\\e-commerce-app\\components\\Section"
+    ]
+  }
+}
