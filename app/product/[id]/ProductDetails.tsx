@@ -5,7 +5,7 @@ import { StarIcon, HeartIcon as HeartSolid } from '@heroicons/react/24/solid'
 import { HeartIcon, ChevronUpIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Button from '@/components/subComp/Button'
-import { Product } from '@/components/Section/ProductsGrid'
+import { Product } from '@/components/types/product'
 import { useCart } from '@/components/subComp/CartContext'
 import { useWishlist } from '@/components/subComp/WishlistContext'
 

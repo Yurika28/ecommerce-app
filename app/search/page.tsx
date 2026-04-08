@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Card from '@/components/subComp/Card';
 import PageLayout from '@/components/subComp/PageLayout';
@@ -36,7 +36,7 @@ function SearchResults({ query }: { query: string }) {
   )
 }
 
-export default function SearchResult() {
+function SearchPage() {
   const searchParams = useSearchParams();
   const query = searchParams.get('q') || '';
 
@@ -52,5 +52,13 @@ export default function SearchResult() {
         </main>
       </PageLayout>
     </FilterProvider>
+  );
+}
+
+export default function SearchResult() {
+  return (
+    <Suspense>
+      <SearchPage />
+    </Suspense>
   );
 }
